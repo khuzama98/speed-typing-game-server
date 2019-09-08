@@ -10,7 +10,7 @@ app.use(express.json());
 
 const port = 5000;
 
-app.listenlisten(process.env.PORT || port);
+app.listen(process.env.PORT || port);
 
 db.once('open', function () {
     console.log("Database Connected Successfully");
