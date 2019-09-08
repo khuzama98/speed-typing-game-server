@@ -8,11 +8,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
-const port = 5001;
+const port = 5000;
 
-app.listen(port,()=>{
-    console.log(`listening on ${port}`)
-})
+app.listenlisten(process.env.PORT || port);
 
 db.once('open', function () {
     console.log("Database Connected Successfully");
