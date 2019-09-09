@@ -8,9 +8,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
-const port = 5000;
+const port = 3000;
 
-app.listen(process.env.PORT || port);
+app.listen(port);
 
 db.once('open', function () {
     console.log("Database Connected Successfully");
@@ -19,4 +19,4 @@ db.once('open', function () {
 db.on('error', console.error.bind(console, 'connection error:'));
 
 
-app.use('/',require("./routes/index"))
+app.use('/', require("./routes/index"))

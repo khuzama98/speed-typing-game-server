@@ -15,7 +15,13 @@ router.post("/signin", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     Users.find({ username, password })
-        .then(() => res.send({ message: "User successfully signedIn!", success: true }))
+        .then((result) => {
+            console.log(result);
+            result.length ?
+                res.send({ message: "User successfully signedIn!", success: true })
+                :
+                res.send({ message: "Invalid username and password or user doesn't exist!", success: false })
+        })
         .catch(e => res.send({ message: e.message, success: false }))
 })
 
